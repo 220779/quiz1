@@ -1,4 +1,4 @@
-package ee.academy.projektplus.quiz1;
+package quiz1;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

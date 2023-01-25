@@ -1,9 +1,9 @@
-package ee.academy.projektplus.quiz1.rest;
+package quiz1.rest;
 
-import ee.academy.projektplus.quiz1.dto.HealthcheckDto;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import quiz1.dto.HealthcheckDto;
 
 
 @RestController

@@ -1,4 +1,4 @@
-package ee.academy.projektplus.quiz1.dto;
+package quiz1.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
