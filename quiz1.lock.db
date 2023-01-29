@@ -1,0 +1,6 @@
+#FileLock
+#Sun Jan 29 18:38:11 EET 2023
+hostName=192.168.8.101
+id=185fe64b5a56834cb3d603c47aa4e328e08fd75df5d
+method=file
+server=192.168.8.101\:57326
