@@ -6,6 +6,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import quiz1.database.entities.PlayerEntity;
 import quiz1.database.repositories.PlayerRepository;
+import quiz1.service.QuizDataService;
 
 import java.util.List;
 
@@ -16,12 +17,16 @@ public class StartupRunner implements CommandLineRunner {
     @Autowired
     private PlayerRepository playerRepository;
 
+    @Autowired
+    private QuizDataService quizDataService;
+
     @Override
     public void run(String...args) throws Exception {
         log.info("Executing startup actions...");
         playerRepository.save(new PlayerEntity("John"));
         playerRepository.save(new PlayerEntity("Harry"));
         playerRepository.save(new PlayerEntity("George"));
+        quizDataService.getQuizCategories();
 
         log.info("List of players from database:");
         List<PlayerEntity> playersFromDatabase = playerRepository.findAll();

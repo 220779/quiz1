@@ -3,7 +3,7 @@ package quiz1.rest;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import quiz1.dto.HealthcheckDto;
+import quiz1.dto.CategoriesDto;
 
 
 @RestController
@@ -11,8 +11,8 @@ import quiz1.dto.HealthcheckDto;
 public class HealthcheckRestController {
 
     @GetMapping
-    public HealthcheckDto healthcheck() {
-        HealthcheckDto dto = new HealthcheckDto(true, "It's working!");
+    public CategoriesDto healthcheck() {
+        CategoriesDto dto = new CategoriesDto();
         return dto;
     }
 
