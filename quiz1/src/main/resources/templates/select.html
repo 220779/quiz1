@@ -12,24 +12,24 @@
     <!-- Custom styles for this template -->
     <link href="css/scrolling-nav.css" rel="stylesheet">
 
-<!--    <link rel="stylesheet" href="https://stackpath.bootstrapedn.com/bootstrap/5.3.0-alphal/css/bootstrap.min.css"-->
-<!--         integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA050M1iAEQ17(SuDqnUK2+k91uXQ0fXJCJ4I"-->
-<!--          crossorigin="anonymous">-->
-<!--    <link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >-->
+    <!--    <link rel="stylesheet" href="https://stackpath.bootstrapedn.com/bootstrap/5.3.0-alphal/css/bootstrap.min.css"-->
+    <!--         integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA050M1iAEQ17(SuDqnUK2+k91uXQ0fXJCJ4I"-->
+    <!--          crossorigin="anonymous">-->
+    <!--    <link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >-->
 </head>
 <body id="page-top">
 
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Quiz Application</a>
+        <a class="navbar-brand js-scroll-trigger" th:href="@{/}">Quiz Application - pick options</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#about">About</a>
+                    <a class="nav-link js-scroll-trigger" href="#about">options</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
@@ -39,13 +39,21 @@
     </div>
 </nav>
 
-<header class="bg-primary text-white">
-    <div class="container text-center">
-        <h1>Ready for an adventure?</h1>
-        <p class="lead">Go ahead and try yourself in Quiz!</p>
-        <a class="btn btn-dark" href="select">Play now!</a>
+<form action="#" th:action="@{/select}" th:object="${gameOptions}" method="post">
+    <div class="form-row">
+        <div class="form-group">
+            <h4>Questions:</h4>
+            <label for="numberOfQuestionsInput">Number: </label>
+            <input class="form-control" name="numberOfQuestionsInput" id="numberOfQuestionsInput" th:field="*{numberOfQuestions}"
+                   type="number" min="1" max="20" step="1"/>
+        </div>
     </div>
-</header>
+    <div class="form-row">
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Play!</button>
+        </div>
+    </div>
+</form>
 
 <section id="about">
     <div class="container">

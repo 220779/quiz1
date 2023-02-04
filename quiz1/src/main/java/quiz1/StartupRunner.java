@@ -3,6 +3,7 @@ package quiz1;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 import quiz1.database.entities.PlayerEntity;
 import quiz1.database.repositories.PlayerRepository;
@@ -10,6 +11,7 @@ import quiz1.service.QuizDataService;
 
 import java.util.List;
 
+@Configuration
 @Component
 @Log
 public class StartupRunner implements CommandLineRunner {
