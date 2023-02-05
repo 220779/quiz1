@@ -12,30 +12,23 @@
     <!-- Custom styles for this template -->
     <link href="css/scrolling-nav.css" rel="stylesheet">
 
-    <!--    <link rel="stylesheet" href="https://stackpath.bootstrapedn.com/bootstrap/5.3.0-alphal/css/bootstrap.min.css"-->
-    <!--         integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA050M1iAEQ17(SuDqnUK2+k91uXQ0fXJCJ4I"-->
-    <!--          crossorigin="anonymous">-->
-    <!--    <link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >-->
+   <link rel="stylesheet" href="https://stackpath.bootstrapedn.com/bootstrap/5.3.0-alphal/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA050M1iAEQ17(SuDqnUK2+k91uXQ0fXJCJ4I"
+          crossorigin="anonymous">
+    <link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
 </head>
 <body id="page-top">
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <div class="container">
-        <a class="navbar-brand js-scroll-trigger" th:href="@{/}">Quiz Application - pick options</a>
+    <div>
+    <a class="navbar-brand js-scroll-trigger" th:href="@{/}">Quiz Application - pick options</a>
+    </nav>
+    </div>
+
+   <div class="container">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#about">options</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-                </li>
-            </ul>
-        </div>
     </div>
 </nav>
 
@@ -44,10 +37,41 @@
         <div class="form-group">
             <h4>Questions:</h4>
             <label for="numberOfQuestionsInput">Number: </label>
-            <input class="form-control" name="numberOfQuestionsInput" id="numberOfQuestionsInput" th:field="*{numberOfQuestions}"
-                   type="number" min="1" max="20" step="1"/>
+            <input class="form-control" name="numberOfQuestionsInput" id="numberOfQuestionsInput" placeholder="Enter value less than or equal to 20" th:field="*{numberOfQuestions}"
+                   type="number" min="1" max="20" step="1" />
         </div>
     </div>
+
+    <div class="form-group">
+        <h4>Difficulty:</h4>
+        <th:block th:each="difficulty : ${T(quiz1.frontend.Difficulty).values()}">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="difficultyRadioOptions"
+                       th:id="'difficulty_' + ${difficulty}" th:value="${difficulty}" th:field="*{difficulty}">
+                <label class="form-check-label" th:for="'difficulty_' + ${difficulty}"
+                       th:text="${difficulty}"></label>
+            </div>
+        </th:block>
+    </div>
+
+
+
+
+    <div class="form-row">
+        <div class="form-group">
+            <h4>Category:</h4>
+            <th:block th:each="category : ${categories}">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="categoryRadioOptions"
+                           th:id="'category_' + ${category.getId()}" th:value="${category.getId()}" th:field="*{categoryId}">
+                    <label class="form-check-label" th:for="'difficulty_' + ${category.getId()}"
+                           th:text="${category.getName()}">
+                    </label>
+                </div>
+            </th:block>
+        </div>
+    </div>
+
     <div class="form-row">
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Play!</button>
@@ -55,21 +79,6 @@
     </div>
 </form>
 
-<section id="about">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <h2>About this quiz</h2>
-                <p class="lead">This quiz is all about knowledge!</p>
-                <ul>
-                    <li>You can select from various different categories</li>
-                    <li>Feel free to pick proper difficulty level - you can choose between easy, medium and hard</li>
-                    <li>If you're brave enough, you can select random category and difficulty level - you'll never know what you'll get!</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
 
 <section id="contact" class="bg-light">
     <div class="container">
@@ -90,8 +99,8 @@
     <!-- /.container -->
 </footer>
 <!-- Bootstrap core JS-->
-<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>-->
-<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous">

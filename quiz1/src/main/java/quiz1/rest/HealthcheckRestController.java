@@ -1,5 +1,5 @@
 package quiz1.rest;
-
+/*
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,4 +16,4 @@ public class HealthcheckRestController {
         return dto;
     }
 
-}
+}*/

@@ -1,6 +1,6 @@
 #FileLock
-#Sat Feb 04 20:46:39 EET 2023
-hostName=172.20.10.6
-id=1861dc07d24dfbbba187b6dd150b19dfb9ccda50683
+#Fri Feb 17 19:40:21 EET 2023
+hostName=192.168.8.101
+id=186607674e32b5feeb3b58602acd66e78305043064f
 method=file
-server=172.20.10.6\:60459
+server=192.168.8.101\:63755

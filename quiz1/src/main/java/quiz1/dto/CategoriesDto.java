@@ -11,7 +11,7 @@ import java.util.List;
 @ToString
 public class CategoriesDto {
 
-    @JsonProperty
+    @JsonProperty ("trivia_categories")
     private List<CategoryDto> categories;
 
     @NoArgsConstructor
@@ -21,5 +21,4 @@ public class CategoriesDto {
         private int id;
         private String name;
     }
-
 }
