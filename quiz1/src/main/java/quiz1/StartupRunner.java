@@ -29,7 +29,7 @@ public class StartupRunner implements CommandLineRunner {
         playerRepository.save(new PlayerEntity("Harry"));
         playerRepository.save(new PlayerEntity("George"));
         quizDataService.getQuizCategories();
-        //quizDataService.getQuizQuestions();
+        quizDataService.getQuizQuestions();
 
         log.info("List of players from database:");
         List<PlayerEntity> playersFromDatabase = playerRepository.findAll();
